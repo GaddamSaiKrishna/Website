@@ -89,7 +89,7 @@ export default function Home() {
             suggestions for solutions, refinement and innovation.
           </p>
         </section>
-        <section className={s.gallery} data-aos="fade-down" >
+        <section className={s.gallery} data-aos="fade-left" >
           <Title title="PHOTO GALLERY" font="36" margin="45" />
           <div className={s.Carousel}>
             <Carousels images={data.slice(0,5)} />

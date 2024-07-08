@@ -10,7 +10,7 @@ function EventCard(props) {
   }, []);
   let startDate = props.startDate;
   return (
-    <div className={s.card} data-aos="flip-down" data-aos-duration="2000">
+    <div className={s.card} data-aos="zoom-in" data-aos-duration="2000">
       <img src={props.img} className={s.card__img} alt={props.title} />
       <div className={s.card__body}>
         <h2 className={s.card__title}>{props.title}</h2>
