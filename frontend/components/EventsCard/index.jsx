@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import s from "./EventCard.styles.module.scss";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function EventCard(props) {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+    AOS.refresh();
+  }, []);
   let startDate = props.startDate;
   return (
-    <div className={s.card}>
+    <div className={s.card} data-aos="flip-down" data-aos-duration="2000">
       <img src={props.img} className={s.card__img} alt={props.title} />
       <div className={s.card__body}>
         <h2 className={s.card__title}>{props.title}</h2>

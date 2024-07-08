@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Tiltle from "../Title";
 import TeamCard from "./TeamCard";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 function TeamSection({ teams, title, year }) {
@@ -9,6 +11,7 @@ function TeamSection({ teams, title, year }) {
 
   useEffect(() => {
 //  function to filter the teams data using year prop 
+    AOS.init({ duration: 1500 });
     function filterByYear(person) {
       if (person.year === year) {
         return true;

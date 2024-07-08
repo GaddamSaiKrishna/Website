@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import s from "../styles/Home.module.scss";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -16,6 +18,7 @@ export default function Home() {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
+    AOS.init({ duration: 1000 });
     setLoading(true);
 
     Promise.all([
@@ -59,10 +62,10 @@ export default function Home() {
       </Head>
       <Header items={navigation} navPosition="right" home={true} />
       <section className={s.hero}>
-        <div className={s.heroImageContainer}></div>
+        <div className={s.heroImageContainer}  data-aos="fade-up"></div>
       </section>
       <div className={s.container}>
-        <section className={s.about}>
+        <section className={s.about} data-aos="fade-up">
           <Title title="ABOUT US" font="36" margin="30" />
           <p>
             The Indian Society for Technical Education(ISTE) is the leading
@@ -86,7 +89,7 @@ export default function Home() {
             suggestions for solutions, refinement and innovation.
           </p>
         </section>
-        <section className={s.gallery}>
+        <section className={s.gallery} data-aos="fade-down" >
           <Title title="PHOTO GALLERY" font="36" margin="45" />
           <div className={s.Carousel}>
             <Carousels images={data.slice(0,5)} />
@@ -96,7 +99,7 @@ export default function Home() {
         <section className={s.faculty}>
           <Title title="FACULTY ADVISORS" font="34" margin="30" />
           <div className={s.wrapper}>
-            <div className={`${s.profileCard}`}>
+            <div className={`${s.profileCard}`} data-aos="fade-right" data-aos-delay="100">
               <div className={s.profileCard__img}>
                 <img src="/fa2.png" alt="profile card" />
               </div>
@@ -115,7 +118,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className={`${s.profileCard}`}>
+            <div className={`${s.profileCard}`} data-aos="fade-left" data-aos-delay="100">
               <div className={s.profileCard__img}>
                 <img src="anirudha.jpg" alt="profile card" />
               </div>

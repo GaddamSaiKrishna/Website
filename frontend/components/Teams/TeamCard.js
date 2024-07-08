@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import 'aos/dist/aos.css';
 
 function TeamCard({d}) {
   return (
-    <div className=" h-[425px]  w-[250px] bg-white  transition-all duration-500 hover:scale-110 drop-shadow-md hover:drop-shadow-xl  rounded-xl  m-6 group">
+    <div className=" h-[425px]  w-[250px] bg-white  transition-all duration-500 hover:scale-110 drop-shadow-md hover:drop-shadow-xl  rounded-xl  m-6 group" data-aos="flip-left" data-aos-duration="2000">
       <Image
         className="rounded-t-2xl"
         src={d.image}

@@ -8,6 +8,8 @@ import Title from "../components/Title";
 import contactDetails from "../data/contact";
 import apiLinks from "../data/apiLink";
 import Head from "next/head";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -56,6 +58,7 @@ const Contact = () => {
 
   useEffect(() => {
     setTimeout(() => setSpinner(false), 1000);
+    AOS.init({ duration: 1500 });
   }, []);
 
   // [] means like componentDidMount
@@ -93,7 +96,7 @@ const Contact = () => {
       <Header items={navigation} navPosition="right" home={false} />
       <section
         className="py-10 px-4 lg:px-16 overflow-hidden relative z-10 mt-[80px]"
-        data-aos="fade-up"
+        // data-aos="fade-up"
         id="contact"
       >
         <Title title="CONTACT US" font="36" margin="15" />
@@ -101,7 +104,7 @@ const Contact = () => {
           <div className="flex flex-col lg:flex-row lg:items-center text-slate-900 dark:text-gray-200 lg:justify-between -mx-4">
             <div
               className="w-full lg:w-1/2 xl:w-6/12 px-4"
-              data-aos="fade-up"
+              data-aos="fade-right"
               data-aos-delay="200"
             >
               <div className="max-w-[570px] mb-12 lg:mb-0">
@@ -177,7 +180,7 @@ const Contact = () => {
             </div>
             <div
               className="w-full lg:w-1/2 xl:w-5/12 px-4"
-              data-aos="fade-up"
+              data-aos="fade-left"
               data-aos-delay="500"
               data-aos-duration="2000"
             >
